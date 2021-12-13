@@ -1,0 +1,22 @@
+@tailwind components;
+
+@layer components{
+  .heading{
+    @apply text-lg font-semibold w-full text-center
+  }
+  .topic{
+    @apply w-full px-2 py-2 flex border border-opacity-70 flex-row space-x-2 overflow-x-scroll
+  }
+  .topic-cards{
+    @apply flex flex-row items-center space-x-10 rounded-md bg-gray-300 px-2 py-0.5
+  }
+  .topic-title{
+    @apply text-xs font-semibold
+  }
+  .sub-heading{
+    @apply text-sm font-bold mt-4 mb-2
+  }
+  .input-span{
+    @apply font-bold text-gray-500 text-lg ml-4
+  }
+}
