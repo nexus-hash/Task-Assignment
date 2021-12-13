@@ -1,0 +1,7 @@
+@tailwind components;
+@layer components{
+.nav{
+  @apply w-full h-12 border-solid border-black border-opacity-30 px-14;
+  border-width: 0.5px;
+ }
+}
