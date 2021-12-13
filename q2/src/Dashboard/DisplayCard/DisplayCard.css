@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components{
+  .disp-cards{
+    @apply w-full max-w-full h-1/6 flex flex-row justify-between items-center space-x-4 px-6 mt-6 py-10;
+  }
+}

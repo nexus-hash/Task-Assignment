@@ -15,7 +15,7 @@ function TopicCards(props){
 
 export default function FilterBar(){
   return (
-    <div className="w-full h-full flex flex-col mt-6 p-4 border">
+    <div className="w-full h-full flex flex-col p-4">
       <h1 className="heading">Filter</h1>
       <h3 className="sub-heading">Topic</h3>
       <div className="topic">

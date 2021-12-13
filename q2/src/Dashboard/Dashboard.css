@@ -2,10 +2,10 @@
 
 @layer components{
   .dashboard{
-    @apply w-screen justify-center items-center flex flex-col;
+    @apply w-screen justify-center items-center flex flex-col pb-10;
   }
   .dashboard-content{
-    @apply w-full max-w-7xl mt-10 h-full flex flex-col;
+    @apply w-full max-w-7xl h-full mt-10 flex flex-col overflow-y-scroll;
   }
   h1{
     @apply text-3xl font-black font-display;

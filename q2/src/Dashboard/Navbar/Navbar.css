@@ -1,8 +1,9 @@
 @tailwind components;
 @layer components{
   .nav{
-    @apply w-screen h-14 border-solid border-black border-opacity-30 px-20;
+    @apply w-screen border-solid border-black border-opacity-30 px-20;
     border-width: 0.5px;
+    height: "10%";
  }
   .login-button{
     background: #DBDFE8;
