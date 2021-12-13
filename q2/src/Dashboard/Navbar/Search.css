@@ -1,0 +1,10 @@
+@tailwind components;
+@layer components{
+.search-bar{
+  @apply w-full rounded-full flex flex-row px-4 py-1 justify-center items-center;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+ }
+.search-input{
+  @apply ml-1 w-full px-2 py-1 border-none focus:outline-none outline-none bg-transparent focus:border-none;
+}
+}

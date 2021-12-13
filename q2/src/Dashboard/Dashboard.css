@@ -1,0 +1,16 @@
+@tailwind components;
+
+@layer components{
+  .dashboard{
+    @apply w-screen justify-center items-center flex flex-col;
+  }
+  .dashboard-content{
+    @apply w-full max-w-7xl mt-10 h-full flex flex-col;
+  }
+  h1{
+    @apply text-3xl font-black font-display;
+  }
+  h2{
+    @apply text-2xl mt-6 font-black font-display;
+  }
+}
