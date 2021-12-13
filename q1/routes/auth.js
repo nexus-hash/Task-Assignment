@@ -6,6 +6,10 @@ const { ObjectId } = require("mongodb");
 const { makeJwt } = require("../utils/jwt_utils");
 
 router.post("/signup", async (req, res) => {
+
+  // The following route takes name, email, contact, password as required params
+  // Creates a new user using the provided credentials
+  // Already used email ids wont be reused to create new account with different credentials
   try {
     const usercollection = getDbClient().collection("Users");
     const {
@@ -17,6 +21,14 @@ router.post("/signup", async (req, res) => {
 
     const hashedpass = sha256(pass);
 
+    const check = await usercollection.findOne({
+      email: email
+    })
+
+    if(check.length > 0){
+      res.status(500).json({message: "User already exists."})
+      return;
+    }
     const insres = await usercollection.insertOne({
       name: name,
       email: email,
@@ -39,6 +51,11 @@ router.post("/signup", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+
+  // This route takes email and password as body parameters and 
+  // Matches the credentials with the database
+  // Returns a jwt auth token with 3hr validity
+  // If no matching credentials found return login error - Invalid Credentials
   try {
     const usercollection = getDbClient().collection("Users");
     const { email: email, password: pass } = req.body;
@@ -75,6 +92,11 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/user", verifyJwt, async (req, res) => {
+
+  // This routes checks for jwt token in the authorization section
+  // If no header sends a 401 error
+  // If token is found it is then tested for validity 
+  // If any user is found the details of the user except password is returned
   if (!req.hasJwt) {
     res.send(401).json({
       message:
